@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "trace": "bat",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
