@@ -30,6 +30,14 @@ public:
 
     void deleteKey(int i);
     void insertKey(int k);
+    void printHeap()
+    {
+
+        for (int i = 0; i < heap_size; i++)
+        {
+            cout << harr[i] << endl;
+        }
+    }
 };
 
 MinHeap::MinHeap(int cap)
@@ -75,8 +83,12 @@ int MinHeap::extractMin()
     int root = harr[0];
     harr[0] = harr[heap_size - 1];
     heap_size--;
+    minHeapify(0);
+
+    return root;
 }
 
+// minheapify essentially helps us in arranging the elements to respect the heap property. it considers that the sub-nodes are already heapified.
 void MinHeap::minHeapify(int i)
 {
 
@@ -111,7 +123,7 @@ void swap(int *x, int *y)
 
 int main()
 {
-    MinHeap h(4);
+    MinHeap h(9);
 
     h.insertKey(3);
     h.insertKey(2);
@@ -120,5 +132,7 @@ int main()
     h.insertKey(24);
     h.insertKey(31);
 
-    // how do you print this thing, it's actually in reality just an array.
+    h.printHeap();
+
+    // how do you print this thing, it's actually in reality just an array..
 }
