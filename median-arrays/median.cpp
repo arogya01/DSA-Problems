@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// we can also use binary seach for this question.
+
 double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
 {
 
