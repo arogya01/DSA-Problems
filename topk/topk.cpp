@@ -19,9 +19,41 @@ Output: [1]
 
 /***
   Used Hashmap to store the element to frequency
-  then, used a vector to compare that
- seems like it took O(n) time
+  then, used a vector to compare that with every element, like basically then we're sorting up the vector which takes O(n log n).
  ***/
+
+/**
+ M-2: using max-heap to extract the elements that would take around O(k log n).
+ which could keep the total time complexity to be O(n).
+
+ super cool.
+ **/
+
+class Heap
+{
+
+    int capacity;
+    vector<int> heaparr;
+    int heapSize;
+
+public:
+    int heapParent(int i) { return (i - 1) / 2; }
+    int heapLeft(int i) {}
+    int heapRight(int i) {}
+
+    Heap(int cap)
+    {
+        capacity = cap;
+    }
+
+    void insertEl(int element)
+    {
+        if (heapSize == 0)
+        {
+            heaparr.push_back(element);
+        }
+    }
+};
 
 bool cmp(pair<int, int> &a, pair<int, int> &b)
 {
