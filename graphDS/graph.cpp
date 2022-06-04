@@ -17,7 +17,14 @@ public:
         m_grapharr = graph;
     }
 
-    void printGraph()
+    // vector<vector<int>> DFS(int startNode)
+    // {
+    //     stack<int> s1;
+    //     vector<vector<int>>::iterator outer;
+    //     vector<int>::iterator inner;
+    // }
+
+        void printGraph()
     {
         vector<vector<int>>::iterator outer;
         vector<int>::iterator inner;
@@ -33,12 +40,12 @@ public:
         }
     }
 
-    vector<int> bfs()
+    vector<int> bfs(int startNode)
     {
 
         queue<int> q;
         vector<int> visited;
-        q.push(1);
+        q.push(startNode);
         while (!q.empty())
         {
 
@@ -84,10 +91,9 @@ int main()
         {3}};
 
     Graph s1(arrdouble);
-    s1.printGraph();
     cout << "code is running fine." << endl;
 
-    vector<int> yo = s1.bfs();
+    vector<int> yo = s1.bfs(2);
 
     vector<int>::iterator itr;
 
