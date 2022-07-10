@@ -1,2 +1,3 @@
 .vscode
-graphDS/graph.exe
+
+*.exe
