@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,14 +16,14 @@ public:
         m_grapharr = graph;
     }
 
-    // vector<vector<int>> DFS(int startNode)
-    // {
-    //     stack<int> s1;
-    //     vector<vector<int>>::iterator outer;
-    //     vector<int>::iterator inner;
-    // }
+    void DFS(int startNode)
+    {
+        stack<int> s1;
+        vector<vector<int>>::iterator outer;
+        vector<int>::iterator inner;
+    }
 
-        void printGraph()
+    void printGraph()
     {
         vector<vector<int>>::iterator outer;
         vector<int>::iterator inner;

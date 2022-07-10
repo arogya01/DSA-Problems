@@ -101284,24 +101284,27 @@ namespace std
 # 3 "A:\\Coding Problems\\DSA-Problems\\max-units-of-trucks\\max-units.cpp"
 using namespace std;
 
+bool sortcol(const vector<int> &v1, const vector<int> &v2)
+{
+    return v1[1] > v2[1];
+}
+
 int maximumUnits(vector<vector<int>> &boxTypes, int truckSize)
 {
 
-    int maxUnits = 0;
-
-    vector<int> sum;
-
-    for (int i = 0; i < boxTypes.size(); i++)
+    int sum = 0;
+    sort(boxTypes.begin(), boxTypes.end(), sortcol);
+# 40 "A:\\Coding Problems\\DSA-Problems\\max-units-of-trucks\\max-units.cpp"
+    for (auto box : boxTypes)
     {
-        sum[i] = boxTypes[i][0] * boxTypes[i][1];
+        int x = min(box[0], truckSize);
+        sum += (x * box[1]);
+        truckSize -= x;
+        if (!truckSize)
+            break;
     }
 
-    for (int i = 0; i < sum.size(); i++)
-    {
-        cout << sum[i] << endl;
-    }
-
-    return maxUnits;
+    return sum;
 }
 
 int main()
