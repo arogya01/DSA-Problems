@@ -1,16 +1,16 @@
-#include<iostream> 
-#include<vector> 
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
-using namespace std; 
-struct ListNode{
-    int val; 
-    struct ListNode* next; 
-}
+using namespace std;
+struct ListNode
+{
+    int val;
+    struct ListNode *next;
+};
 
-ListNode *reverseList(ListNode* head){}
+ListNode *reverseList(ListNode *head) {}
 
-int main(){
-
-    
+int main()
+{
 }
