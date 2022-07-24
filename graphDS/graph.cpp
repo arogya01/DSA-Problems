@@ -16,13 +16,6 @@ public:
         m_grapharr = graph;
     }
 
-    void DFS(int startNode)
-    {
-        stack<int> s1;
-        vector<vector<int>>::iterator outer;
-        vector<int>::iterator inner;
-    }
-
     void printGraph()
     {
         vector<vector<int>>::iterator outer;
@@ -68,8 +61,34 @@ public:
         return visited;
     }
 
-    void dfs()
+    // essentially, what're doing in DFS is start exploring the adjacent nodes and keep exploring them, don't stop and push the other elements into the stack.
+    vector<int> dfs(int startNode)
     {
+        stack<int> st;
+        vector<int> visited;
+
+        // visited.push_back(startNode);
+        st.push(startNode);
+        while (!st.empty())
+        {
+
+            int temp = st.top();
+            st.pop();
+            vector<int>::iterator itr;
+            vector<int>::iterator check;
+            check = find(visited.begin(), visited.end(), temp);
+            if (check == visited.end())
+            {
+                // cout << temp << " ";
+                visited.push_back(temp);
+                for (itr = m_grapharr[temp].begin(); itr != m_grapharr[temp].end(); itr++)
+                {
+                    st.push(*itr);
+                }
+            }
+        }
+
+        return visited;
     }
 };
 
@@ -89,13 +108,29 @@ int main()
         {3},
         {3}};
 
+    vector<vector<int>> arr{
+        {},
+        {2, 5},
+        {1, 3, 4},
+        {2},
+        {2, 6},
+        {1},
+        {4}};
     Graph s1(arrdouble);
+    Graph s2(arr);
+
     cout << "code is running fine." << endl;
 
     vector<int> yo = s1.bfs(2);
-
     vector<int>::iterator itr;
 
+    // s1.dfs(2);
+    vector<int> res = s2.dfs(1);
+    for (itr = res.begin(); itr != res.end(); itr++)
+    {
+        cout << *itr << " ";
+    }
+    cout << endl;
     for (itr = yo.begin(); itr != yo.end(); itr++)
     {
         cout << *itr << endl;
