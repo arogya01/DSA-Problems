@@ -19,6 +19,10 @@ public:
     {
         cout << val << endl;
     }
+
+    void insert(int value)
+    {
+    }
 };
 
 int main()
