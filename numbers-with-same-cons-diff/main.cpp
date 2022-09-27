@@ -2,12 +2,14 @@
 
 using namespace std;
 
+// Question Link : https://leetcode.com/problems/numbers-with-same-consecutive-differences/
+
 class Solution
 {
 public:
     vector<int> ans;
 
-    void Solve(int len, int &k, int num, int digit)
+    void Solve(int len, int const &k, int num, int digit)
     {
         // Base Case
         if (len == 0)
