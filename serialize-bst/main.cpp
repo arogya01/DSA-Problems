@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 /**
@@ -34,6 +34,37 @@ public:
         cout << "res is : " << res << endl;
         return res;
         // result.find("null");
+    }
+
+    TreeNode *deserializeTwo(string data)
+    {
+        stringstream ss(data);
+        string item;
+
+        TreeNode *root = nullptr;
+        while (getline(ss, item, '-'))
+        {
+            root = insert(root, stoi(item));
+        }
+
+        return root;
+    }
+
+    TreeNode *insert(TreeNode *root, int val)
+    {
+        if (root == NULL)
+        {
+            TreeNode *temp = new TreeNode(val);
+            return temp;
+        }
+
+        if (val <= root->val)
+            root->left = insert(root->left, val);
+
+        else
+            root->right = insert(root->right, val);
+
+        return root;
     }
 
     string serializeTree(TreeNode *node)
@@ -78,37 +109,18 @@ public:
         return buildTree(preorder, numeric_limits<int>::min(), numeric_limits<int>::max());
     }
 };
-
-// Your Codec object will be instantiated and called as such:
-// Codec* ser = new Codec();
-// Codec* deser = new Codec();
-// string tree = ser->serialize(root);
-// TreeNode* ans = deser->deserialize(tree);
-// return ans;
-
 int main()
 {
-    // TreeNode *root = new TreeNode(5);
-    // TreeNode *leftNode = new TreeNode(2);
-    // TreeNode *rightNode = new TreeNode(7);
-    // root->left = leftNode;
-    // root->right = rightNode;
-    // leftNode->right = new TreeNode(4);
-    // rightNode->left = new TreeNode(6);
-
-    // Codec *ser = new Codec();
-    // string tree = ser->serialize(root);
-    // cout << "tree is : " << tree << endl;
 
     Codec *deser = new Codec();
-    string preorder_str = "5,3,2,4,7,6,8";
-    TreeNode *root = deser->deserialize(preorder_str);
+    string preorder_str = "2-1-3-";
+    TreeNode *root = deser->deserializeTwo(preorder_str);
     // Test the deserialized tree
-    cout << root->val << endl;               // output: 5
-    cout << root->left->val << endl;         // output: 3
-    cout << root->left->left->val << endl;   // output: 2
-    cout << root->left->right->val << endl;  // output: 4
-    cout << root->right->val << endl;        // output: 7
-    cout << root->right->left->val << endl;  // output: 6
-    cout << root->right->right->val << endl; // output: 8
+    cout << root->val << endl;        // output: 2
+    cout << root->left->val << endl;  // output: 1
+    cout << root->right->val << endl; // output: 3
+
+    string test{"45981"};
+    sort(test.begin(), test.end());
+    cout << test << endl;
 }
