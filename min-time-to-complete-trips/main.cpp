@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Solution
@@ -7,29 +8,20 @@ public:
     long long minimumTime(vector<int> &time, int totalTrips)
     {
 
-        sort(time.begin(), time.end());
-        if (totalTrips == 1)
-            return time[0];
-        long long total = 0, minTime = time[0];
-        long long cur = time[0];
-        while (total < totalTrips)
+        long long l = 0;
+        long long r = 1LL * time[0] * totalTrips;
+        while (l < r)
         {
-            for (int i = 0; i < time.size(); i++)
-            {
-                if (cur % time[i] == 0)
-                {
-                    cout << cur << " " << time[i] << endl;
-                    total++;
-                }
-            }
-
-            cur++;
-            minTime++;
+            long long m = l + (r - l) / 2, trips = 0;
+            cout << "the details are :" << l << " " << m << " " << r << endl;
+            for (auto x : time)
+                trips += (m / x);
+            if (trips < totalTrips)
+                l = m + 1;
+            else
+                r = m;
         }
-        cout << cur << endl;
-        cout << "total is : " << total << endl;
-
-        return minTime - 1;
+        return l;
     }
 };
 
