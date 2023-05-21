@@ -85,6 +85,17 @@ public:
 
 class MinHeap
 {
+    private: 
+    vector<int> heap; 
+    void heapify(int index){
+
+    }
+
+    void sift_up()
+    public: 
+    void make_heap(){
+        for(int i = 0; )
+    }
 };
 
 int main()
