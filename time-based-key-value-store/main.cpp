@@ -4,6 +4,13 @@
 #include <utility>
 using namespace std;
 
+/***
+ * so about this time-based problem, I was getting something wrong related to the unordered_map, let's review it from the basics...
+ * alright, so the mapping is key -> vector< int (timestamp) , string (value) >
+ * and then to get the timestamp, we were performing binary search, right ?
+ * correct...
+ *
+ */
 class TimeMap
 {
 public:

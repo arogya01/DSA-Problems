@@ -45,4 +45,9 @@ console.log(curriedJoin(1, 2)(3)); // '1_2_3'
 
 
 
+// gathering the following requirements 
+// 1. return result if all the args are provided 
+// 2. if not, then return a fn which expects missing arguments, and return result when all the args are provided, this should also return a curried fn.. 
+
+
 
