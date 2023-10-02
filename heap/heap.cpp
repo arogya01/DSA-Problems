@@ -18,16 +18,11 @@ public:
     MinHeap(int capacity);
     void minHeapify(int);
     int parent(int i) { return (i - 1) / 2; }
-
     int left(int i) { return (2 * i + 1); }
     int right(int i) { return (2 * i + 2); }
-
-    int extractMin();
-
+    int extractMin(); // actually plucks out the min value.
     void decreaseKey(int i, int new_val);
-
     int getMin() { return harr[0]; }
-
     void deleteKey(int i);
     void insertKey(int k);
     void printHeap()
@@ -131,6 +126,8 @@ int main()
     h.insertKey(15);
     h.insertKey(24);
     h.insertKey(31);
+
+    h.extractMin();
 
     h.printHeap();
 
