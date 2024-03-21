@@ -5,6 +5,10 @@
 
 using namespace std;
 
+// can use a compartor fn for this, they used char as the arg, I was sorta confused looking at the
+// internet examples, but why would it take in string then? quite weird,
+// the right question to ask is, can I use both in the arg thingy (seems like so...)
+
 class Solution
 {
 public:
