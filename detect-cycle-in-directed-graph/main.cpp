@@ -9,8 +9,7 @@ private:
     bool dfsCheck(int node, vector<vector<int>> adjList, vector<int> vis, vector<int> pathVis)
     {
 
-        vis[node] = 1;
-        pathVis[node] = 1;
+        vis[node] = 2;
 
         // traversing for adj nodes
         for (auto it : adjList[node])
@@ -22,13 +21,13 @@ private:
                     return true;
                 }
             }
-            else if (pathVis[it])
+            else if (pathVis[it] == 2)
             {
                 return true;
             }
         }
 
-        pathVis[node] = 0;
+        vis[node] = 1;
         return false;
     }
 
