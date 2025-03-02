@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "LRUCache.js",
+  "type": "module",
   "dependencies": {
     "asynckit": "^0.4.0",
     "combined-stream": "^1.0.8",
