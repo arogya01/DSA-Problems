@@ -1,0 +1,7 @@
+2025-02-18T05:11:50.022Z: Connected to MongoDB
+2025-02-18T05:11:50.669Z: Error: not primary
+2025-02-18T05:29:19.711Z: Connected to MongoDB
+2025-02-18T05:29:19.909Z: Updated 39 documents
+2025-02-18T05:29:19.917Z: Migration completed in 447ms
+2025-02-18T05:29:19.920Z: Closed MongoDB connection
+2025-02-19T09:08:42.783Z: Connected to MongoDB

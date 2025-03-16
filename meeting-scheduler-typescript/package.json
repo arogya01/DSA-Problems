@@ -1,0 +1,29 @@
+{
+  "name": "meeting-scheduler-typescript",
+  "version": "1.0.0",
+  "description": "A concurrent meeting scheduler application with multithreading support",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "meeting",
+    "scheduler",
+    "typescript",
+    "concurrency",
+    "multithreading"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/uuid": "^9.0.8",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
+  }
+}
