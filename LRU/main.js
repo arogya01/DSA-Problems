@@ -25,7 +25,7 @@ class LRUCache{
         }
         
         // if cache size is full, remove the least recently used. 
-        if(this.cache.size >= this.cache.capacity){
+        if(this.cache.size >= this.capacity){
             const oldestKey = this.cache.keys().next().value; 
             this.cache.delete(oldestKey); 
         }
