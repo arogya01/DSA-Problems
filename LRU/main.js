@@ -2,7 +2,7 @@
 
 class LRUCache{
     constructor(capacity){
-        this.capacity = capacity; 
+        this.capacity = capacity; // you're essentially defining the variables.         
         this.cache = new Map(); 
     }
 
@@ -26,6 +26,7 @@ class LRUCache{
         
         // if cache size is full, remove the least recently used. 
         if(this.cache.size >= this.capacity){
+            console.log(this.cache.keys());
             const oldestKey = this.cache.keys().next().value; 
             this.cache.delete(oldestKey); 
         }
